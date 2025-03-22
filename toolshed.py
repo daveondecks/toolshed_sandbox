@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import io
+from PIL import Image
 
 # Display ONE TEAM logo at top of sidebar
 with st.sidebar:
