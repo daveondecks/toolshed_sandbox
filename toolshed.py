@@ -9,7 +9,7 @@ st.set_page_config(page_title="PDCA Toolshed", layout="wide")
 
 st.markdown("""
     <style>
-    body::before {
+    .main::before {
         content: "";
         position: fixed;
         top: 20%;
