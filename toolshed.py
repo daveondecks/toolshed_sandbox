@@ -7,21 +7,6 @@ from datetime import date
 # Set wide layout
 st.set_page_config(page_title="PDCA Toolshed", layout="wide")
 
-st.markdown("""
-    <div style="
-        position: fixed;
-        top: 25%;
-        left: 50%;
-        transform: translate(-50%, -25%);
-        opacity: 0.05;
-        z-index: 0;
-        pointer-events: none;
-    ">
-        <img src="resources/oneteam.png" width="500">
-    </div>
-""", unsafe_allow_html=True)
-
-
 # ✅ Load tool data
 @st.cache_data
 def load_data():
@@ -130,7 +115,6 @@ with tab1:
                 font-weight: bold;">
                 {phase} Toolbox
             </div>
-            """, unsafe_allow_html=True)
 
             # ✅ Display selected tools
             if not tools:
@@ -140,11 +124,9 @@ with tab1:
                     padding: 10px; 
                     border-radius: 5px;
                     text-align: center;
-                    margin-top: 5px;
                     color: black;">
                     No tools selected
                 </div>
-                """, unsafe_allow_html=True)
             else:
                 toolbox_html = f"""
                 <div style="
@@ -152,7 +134,6 @@ with tab1:
                     border: 2px solid {box_color};
                     border-radius: 10px;
                     padding: 10px;
-                    margin-top: 5px;
                 ">
                 <ul style="list-style-type: none; padding: 0;">
                 """
@@ -160,7 +141,6 @@ with tab1:
                     toolbox_html += f'<li style="padding: 5px; border-bottom: 1px solid {box_color};">✅ {tool}</li>'
                 toolbox_html += "</ul></div>"
 
-                st.markdown(toolbox_html, unsafe_allow_html=True)
 
 # === Tool Dictionary Tab ===
 with tab2:
@@ -214,7 +194,6 @@ with tab3:
 
         🏗️ **Just watch this space!** 🎥
         """,
-        unsafe_allow_html=True
     )
     # === Project Plan Tab ===
 with tab4:
@@ -226,7 +205,6 @@ with tab4:
     created_date = st.session_state.get("created_date", date.today().strftime("%d-%m-%Y"))
 
     # ✅ Display Project Details
-    st.markdown(f"**Project Name:** {project_name} &nbsp;&nbsp; **Owner:** {project_owner} &nbsp;&nbsp; **Created:** {created_date}", unsafe_allow_html=True)
     st.write("")  # Empty line for spacing
 
     # ✅ Introductory text for the project plan table
