@@ -323,10 +323,10 @@ with tab7:
 
 from PIL import Image
 
-# === ONE TEAM logo ===
-with st.sidebar:
-    logo = Image.open("resources/oneteam.png")
-    st.image(logo, width=100)
+# === ONE TEAM logo at top of sidebar ===
+logo = Image.open("resources/oneteam.png")
+st.sidebar.image(logo, width=100)
+
 
 # === ONE TEAM color palette styles ===
 st.markdown("""
