@@ -26,13 +26,6 @@ tool_data = tool_data.rename(columns={
 })
 
 # ✅ Sidebar: Project Details & PDCA Selection
-from PIL import Image
-
-# === ONE TEAM logo ===
-with st.sidebar:
-    logo = Image.open("resources/oneteam.png")
-    st.image(logo, width=90)
-
 st.sidebar.title("Project Details")
 
 # ✅ Store Project Name & Owner in session state
@@ -105,10 +98,39 @@ with tab1:
             box_color = pdca_colors[phase]  
 
             # ✅ Render PDCA-colored Toolbox Header
+            st.markdown(f"""
+            <div style="
+                background-color: {box_color}; 
+                padding: 15px; 
+                border-radius: 10px; 
+                text-align: center; 
+                color: white; 
+                font-weight: bold;">
+                {phase} Toolbox
+            </div>
+            """, unsafe_allow_html=True)
+
+            # ✅ Display selected tools
+            if not tools:
+                st.markdown(f"""
+                <div style="
+                    background-color: #F1F1F1; 
+                    padding: 10px; 
+                    border-radius: 5px;
+                    text-align: center;
+                    margin-top: 5px;
+                    color: black;">
+                    No tools selected
+                </div>
+                """, unsafe_allow_html=True)
+            else:
+                toolbox_html = f"""
+                <div style="
                     background-color: white;
                     border: 2px solid {box_color};
                     border-radius: 10px;
                     padding: 10px;
+                    margin-top: 5px;
                 ">
                 <ul style="list-style-type: none; padding: 0;">
                 """
@@ -116,6 +138,7 @@ with tab1:
                     toolbox_html += f'<li style="padding: 5px; border-bottom: 1px solid {box_color};">✅ {tool}</li>'
                 toolbox_html += "</ul></div>"
 
+                st.markdown(toolbox_html, unsafe_allow_html=True)
 
 # === Tool Dictionary Tab ===
 with tab2:
@@ -169,6 +192,7 @@ with tab3:
 
         🏗️ **Just watch this space!** 🎥
         """,
+        unsafe_allow_html=True
     )
     # === Project Plan Tab ===
 with tab4:
@@ -180,6 +204,7 @@ with tab4:
     created_date = st.session_state.get("created_date", date.today().strftime("%d-%m-%Y"))
 
     # ✅ Display Project Details
+    st.markdown(f"**Project Name:** {project_name} &nbsp;&nbsp; **Owner:** {project_owner} &nbsp;&nbsp; **Created:** {created_date}", unsafe_allow_html=True)
     st.write("")  # Empty line for spacing
 
     # ✅ Introductory text for the project plan table
@@ -270,6 +295,8 @@ else:
 
     import streamlit as st
 from PIL import Image
+
+# === Repository ===
 with tab5:
     # Tab 5: Repository
     st.title("📂 CI Repository (Coming Soon)")
@@ -293,6 +320,41 @@ with tab7:
     st.info("Start a new discussion or browse existing conversations.")
 
 # === Feedback ===
+
+from PIL import Image
+
+# === ONE TEAM logo ===
+with st.sidebar:
+    logo = Image.open("resources/oneteam.png")
+    st.image(logo, width=100)
+
+# === ONE TEAM color palette styles ===
+st.markdown("""
+    <style>
+        .block-container {
+            padding-top: 2rem;
+        }
+
+        h1, h2, h3 {
+            color: #1E4C48; /* Deep green/charcoal */
+        }
+
+        .stButton > button {
+            border: none;
+            border-radius: 10px;
+            padding: 0.7em 1.5em;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Toolbox Buttons */
+        div[data-testid="stHorizontalBlock"] > div:nth-child(1) button { background-color: #F37C2A; color: white; } /* Plan */
+        div[data-testid="stHorizontalBlock"] > div:nth-child(2) button { background-color: #2DBE9C; color: white; } /* Do */
+        div[data-testid="stHorizontalBlock"] > div:nth-child(3) button { background-color: #A5D8D0; color: #1E4C48; } /* Check */
+        div[data-testid="stHorizontalBlock"] > div:nth-child(4) button { background-color: #1E4C48; color: white; } /* Act */
+    </style>
+""", unsafe_allow_html=True)
+
 with tab8:
 # Tab 8: Feedback
     st.title("📝 Toolshed Feedback")
