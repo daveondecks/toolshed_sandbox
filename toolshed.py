@@ -26,6 +26,13 @@ tool_data = tool_data.rename(columns={
 })
 
 # ✅ Sidebar: Project Details & PDCA Selection
+from PIL import Image
+
+# === ONE TEAM logo ===
+with st.sidebar:
+    logo = Image.open("resources/oneteam.png")
+    st.image(logo, width=90)
+
 st.sidebar.title("Project Details")
 
 # ✅ Store Project Name & Owner in session state
@@ -295,16 +302,6 @@ else:
 
     import streamlit as st
 from PIL import Image
-
-from PIL import Image
-
-# === ONE TEAM logo ===
-with st.sidebar:
-    logo = Image.open("resources/oneteam.png")
-    st.image(logo, width=180)
-
-
-# === Repository ===
 with tab5:
     # Tab 5: Repository
     st.title("📂 CI Repository (Coming Soon)")
