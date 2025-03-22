@@ -1,14 +1,14 @@
-from PIL import Image
 import streamlit as st
 import pandas as pd
 import io
-import xlsxwriter
-from datetime import date
 
 # Display ONE TEAM logo at top of sidebar
 with st.sidebar:
     logo = Image.open("resources/oneteam.png")
     st.image(logo, use_container_width=True)
+
+import xlsxwriter
+from datetime import date
 
 # Set wide layout
 st.set_page_config(page_title="PDCA Toolshed", layout="wide")
@@ -326,33 +326,6 @@ with tab7:
     st.info("Start a new discussion or browse existing conversations.")
 
 # === Feedback ===
-
-# === ONE TEAM color palette styles ===
-st.markdown("""
-    <style>
-        .block-container {
-            padding-top: 2rem;
-        }
-
-        h1, h2, h3 {
-            color: #1E4C48;
-        }
-
-        .stButton > button {
-            border: none;
-            border-radius: 10px;
-            padding: 0.7em 1.5em;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        div[data-testid="stHorizontalBlock"] > div:nth-child(1) button { background-color: #F37C2A; color: white; }
-        div[data-testid="stHorizontalBlock"] > div:nth-child(2) button { background-color: #2DBE9C; color: white; }
-        div[data-testid="stHorizontalBlock"] > div:nth-child(3) button { background-color: #A5D8D0; color: #1E4C48; }
-        div[data-testid="stHorizontalBlock"] > div:nth-child(4) button { background-color: #1E4C48; color: white; }
-    </style>
-""", unsafe_allow_html=True)
-
 with tab8:
 # Tab 8: Feedback
     st.title("📝 Toolshed Feedback")
