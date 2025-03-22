@@ -20,7 +20,7 @@ st.markdown("""
         background-image: url("resources/oneteam.png");
         background-size: contain;
         background-repeat: no-repeat;
-        opacity: 0.05;
+        opacity: 0.3;
         z-index: 0;
         pointer-events: none;
     }
