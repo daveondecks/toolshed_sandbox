@@ -1,3 +1,10 @@
+from PIL import Image
+
+# Display ONE TEAM logo at top of sidebar
+with st.sidebar:
+    logo = Image.open("resources/oneteam.png")
+    st.image(logo, use_column_width=True)
+
 import streamlit as st
 import pandas as pd
 import io
