@@ -105,31 +105,6 @@ with tab1:
             box_color = pdca_colors[phase]  
 
             # ✅ Render PDCA-colored Toolbox Header
-            st.markdown(f"""
-            <div style="
-                background-color: {box_color}; 
-                padding: 15px; 
-                border-radius: 10px; 
-                text-align: center; 
-                color: white; 
-                font-weight: bold;">
-                {phase} Toolbox
-            </div>
-
-            # ✅ Display selected tools
-            if not tools:
-                st.markdown(f"""
-                <div style="
-                    background-color: #F1F1F1; 
-                    padding: 10px; 
-                    border-radius: 5px;
-                    text-align: center;
-                    color: black;">
-                    No tools selected
-                </div>
-            else:
-                toolbox_html = f"""
-                <div style="
                     background-color: white;
                     border: 2px solid {box_color};
                     border-radius: 10px;
