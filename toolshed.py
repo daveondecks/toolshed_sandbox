@@ -9,12 +9,20 @@ st.set_page_config(page_title="PDCA Toolshed", layout="wide")
 
 st.markdown("""
     <style>
-    div[data-testid="stAppViewContainer"] {
+    div[data-testid="stAppViewContainer"]::before {
+        content: "";
+        position: fixed;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -20%);
+        width: 500px;
+        height: auto;
         background-image: url("resources/oneteam.png");
+        background-size: contain;
         background-repeat: no-repeat;
-        background-position: center;
-        background-size: 500px;
         opacity: 0.05;
+        z-index: 0;
+        pointer-events: none;
     }
     </style>
 """, unsafe_allow_html=True)
