@@ -25,11 +25,6 @@ tool_data = tool_data.rename(columns={
     "Unnamed: 6": "Video3"
 })
 
-# === ONE TEAM logo at top of sidebar ===
-logo = Image.open("resources/oneteam.png")
-st.sidebar.image(logo, width=100)
-
-
 # ✅ Sidebar: Project Details & PDCA Selection
 st.sidebar.title("Project Details")
 
@@ -326,10 +321,6 @@ with tab7:
 
 # === Feedback ===
 
-from PIL import Image
-
-
-
 # === ONE TEAM color palette styles ===
 st.markdown("""
     <style>
@@ -338,7 +329,7 @@ st.markdown("""
         }
 
         h1, h2, h3 {
-            color: #1E4C48; /* Deep green/charcoal */
+            color: #1E4C48;
         }
 
         .stButton > button {
@@ -349,11 +340,10 @@ st.markdown("""
             font-size: 16px;
         }
 
-        /* Toolbox Buttons */
-        div[data-testid="stHorizontalBlock"] > div:nth-child(1) button { background-color: #F37C2A; color: white; } /* Plan */
-        div[data-testid="stHorizontalBlock"] > div:nth-child(2) button { background-color: #2DBE9C; color: white; } /* Do */
-        div[data-testid="stHorizontalBlock"] > div:nth-child(3) button { background-color: #A5D8D0; color: #1E4C48; } /* Check */
-        div[data-testid="stHorizontalBlock"] > div:nth-child(4) button { background-color: #1E4C48; color: white; } /* Act */
+        div[data-testid="stHorizontalBlock"] > div:nth-child(1) button { background-color: #F37C2A; color: white; }
+        div[data-testid="stHorizontalBlock"] > div:nth-child(2) button { background-color: #2DBE9C; color: white; }
+        div[data-testid="stHorizontalBlock"] > div:nth-child(3) button { background-color: #A5D8D0; color: #1E4C48; }
+        div[data-testid="stHorizontalBlock"] > div:nth-child(4) button { background-color: #1E4C48; color: white; }
     </style>
 """, unsafe_allow_html=True)
 
