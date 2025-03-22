@@ -5,29 +5,6 @@ from PIL import Image
 # Set wide layout
 st.set_page_config(page_title="PDCA Toolshed", layout="wide")
 
-# === ONE TEAM color palette styles ===
-st.markdown("""
-    <style>
-        h1, h2, h3 {
-            color: #1E4C48;
-        }
-
-        .stButton > button {
-            border: none;
-            border-radius: 8px;
-            padding: 0.6em 1.4em;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        div[data-testid="stHorizontalBlock"] > div:nth-child(1) button { background-color: #F37C2A; color: white; }
-        div[data-testid="stHorizontalBlock"] > div:nth-child(2) button { background-color: #2DBE9C; color: white; }
-        div[data-testid="stHorizontalBlock"] > div:nth-child(3) button { background-color: #A5D8D0; color: #1E4C48; }
-        div[data-testid="stHorizontalBlock"] > div:nth-child(4) button { background-color: #1E4C48; color: white; }
-    </style>
-""", unsafe_allow_html=True)
-
-
 # Display ONE TEAM logo at top of sidebar
 with st.sidebar:
     logo = Image.open("resources/oneteam.png")
