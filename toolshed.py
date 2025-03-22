@@ -8,23 +8,17 @@ from datetime import date
 st.set_page_config(page_title="PDCA Toolshed", layout="wide")
 
 st.markdown("""
-    <style>
-    .block-container::before {
-        content: "";
+    <div style="
         position: fixed;
-        top: 20%;
+        top: 25%;
         left: 50%;
-        transform: translate(-50%, -20%);
-        width: 500px;
-        height: auto;
-        background-image: url("resources/oneteam.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        opacity: 0.3;
+        transform: translate(-50%, -25%);
+        opacity: 0.05;
         z-index: 0;
         pointer-events: none;
-    }
-    </style>
+    ">
+        <img src="resources/oneteam.png" width="500">
+    </div>
 """, unsafe_allow_html=True)
 
 
