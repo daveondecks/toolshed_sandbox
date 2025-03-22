@@ -9,7 +9,7 @@ st.set_page_config(page_title="PDCA Toolshed", layout="wide")
 
 st.markdown("""
     <style>
-    div[data-testid="stAppViewContainer"]::before {
+    .block-container::before {
         content: "";
         position: fixed;
         top: 20%;
