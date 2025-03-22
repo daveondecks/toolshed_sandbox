@@ -1,7 +1,4 @@
-fpdf==1.7.2
-matplotlib==3.10.1
-numpy==2.2.4
 pandas==2.2.3
-seaborn==0.13.2
+Pillow==11.1.0
 streamlit==1.42.2
 xlsxwriter==3.2.2

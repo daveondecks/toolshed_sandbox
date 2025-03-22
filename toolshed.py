@@ -61,10 +61,10 @@ with st.sidebar:
     st.session_state['project_owner'] = st.text_input("Project Owner")
 
     st.markdown("### Select Tools for PDCA Phases")
-    plan_tool = st.selectbox("Plan Tools:", tool_data['Tool'].dropna().unique())
-    do_tool = st.selectbox("Do Tools:", tool_data['Tool'].dropna().unique())
-    check_tool = st.selectbox("Check Tools:", tool_data['Tool'].dropna().unique())
-    act_tool = st.selectbox("Act Tools:", tool_data['Tool'].dropna().unique())
+    plan_tool = st.selectbox("Plan Tools:", tool_data['Tool Name'].dropna().unique())
+    do_tool = st.selectbox("Do Tools:", tool_data['Tool Name'].dropna().unique())
+    check_tool = st.selectbox("Check Tools:", tool_data['Tool Name'].dropna().unique())
+    act_tool = st.selectbox("Act Tools:", tool_data['Tool Name'].dropna().unique())
 
 # ========================
 # ✅ Main Page Header
@@ -84,7 +84,7 @@ def show_toolbox(phase, tool_name, bg_color):
         unsafe_allow_html=True
     )
     if tool_name:
-        tool_row = tool_data[tool_data['Tool'] == tool_name]
+        tool_row = tool_data[tool_data['Tool Name'] == tool_name]
         if not tool_row.empty:
             st.markdown(f"**{tool_name}**")
             st.write(tool_row['Description'].values[0])
