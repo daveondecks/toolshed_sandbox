@@ -25,6 +25,11 @@ tool_data = tool_data.rename(columns={
     "Unnamed: 6": "Video3"
 })
 
+# === ONE TEAM logo at top of sidebar ===
+logo = Image.open("resources/oneteam.png")
+st.sidebar.image(logo, width=100)
+
+
 # ✅ Sidebar: Project Details & PDCA Selection
 st.sidebar.title("Project Details")
 
@@ -323,9 +328,6 @@ with tab7:
 
 from PIL import Image
 
-# === ONE TEAM logo at top of sidebar ===
-logo = Image.open("resources/oneteam.png")
-st.sidebar.image(logo, width=100)
 
 
 # === ONE TEAM color palette styles ===
