@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import io
 from PIL import Image
+# Set wide layout
+st.set_page_config(page_title="PDCA Toolshed", layout="wide")
 
 # Display ONE TEAM logo at top of sidebar
 with st.sidebar:
@@ -11,8 +13,6 @@ with st.sidebar:
 import xlsxwriter
 from datetime import date
 
-# Set wide layout
-st.set_page_config(page_title="PDCA Toolshed", layout="wide")
 
 # ✅ Load tool data
 @st.cache_data
