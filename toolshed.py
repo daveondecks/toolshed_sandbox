@@ -1,15 +1,14 @@
 from PIL import Image
-
-# Display ONE TEAM logo at top of sidebar
-with st.sidebar:
-    logo = Image.open("resources/oneteam.png")
-    st.image(logo, use_column_width=True)
-
 import streamlit as st
 import pandas as pd
 import io
 import xlsxwriter
 from datetime import date
+
+# Display ONE TEAM logo at top of sidebar
+with st.sidebar:
+    logo = Image.open("resources/oneteam.png")
+    st.image(logo, use_column_width=True)
 
 # Set wide layout
 st.set_page_config(page_title="PDCA Toolshed", layout="wide")
